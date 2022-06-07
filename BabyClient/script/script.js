@@ -6,7 +6,7 @@ window.onload = () => {
 }
 
 function makeRequest() {
-  const uri = "http://localhost:8080/?equation="
+  const uri = "http://localhost:4242/?equation="
   let endpoint = getInput()
   let url = uri + encodeURIComponent(endpoint)
   fetch(url)
@@ -17,7 +17,7 @@ function makeRequest() {
     })
 }
 
-function clearCurrentAttempt(){
+function clearCurrentAttempt() {
   for (let i = 0; i < 6; i++)
     document.getElementById(`id_${i}`).value = ""
 }
@@ -25,10 +25,10 @@ function clearCurrentAttempt(){
 function handleData(data) {
   let lastAttempt = null;
 
-  if (!data.isValidInput)	{
+  if (!data.isValidInput) {
     clearHTML()
     alert("Invalid Input")
-  } else if (!data.isFortyTwo){
+  } else if (!data.isFortyTwo) {
     clearHTML()
     alert("Equation is not equal to Forty two")
   } else {
@@ -39,7 +39,7 @@ function handleData(data) {
 }
 
 function clearHTML() {
-  for (let i = 0; i < 6; i++)	{
+  for (let i = 0; i < 6; i++) {
     document.getElementById(`last_attempt${i}`).value = ""
     document.getElementById(`tips${i}`).value = ""
   }
