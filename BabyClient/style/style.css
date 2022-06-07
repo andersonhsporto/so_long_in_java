@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 15px;
+  margin: 2% 2% 2% 2%;
+  max-width: 650px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#div-last-attempt {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+#div-tips {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+#div-current-attempt {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+header {
+  margin-bottom: 13px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius:15px;
+}
+
+main {
+  margin-bottom: 13px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius:15px;
+}
+
+#display-help {
+  display: flex;
+  margin: 10px 0px 0px 15px;
+  width: 25px;
+  height: 25px;
+}
+
+#game-return {
+  margin-top: 1%;
+}
+
+#body {
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 15px;
+  border: 2px solid black;
+  border-radius:15px;
+}
+
+
+.title {
+  font-size: 20px;
+}
+
+.input {
+  width: 10%;
+  height: 1000%;
+  font-size: large;
+  text-align: center;
+  max-width: 50px;
+  padding: 10px;
+}
+
+#btn {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#info {
+  display: flex;
+  width: 32px;
+  height: 32px;
+}
