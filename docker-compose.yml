@@ -1,0 +1,11 @@
+version: "1.0"
+services:
+  web:
+    build: DailyClient/
+    ports:
+      - "80:80"
+
+  back-end:
+    build: DailyServer/
+    ports:
+      - "4242:4242"
