@@ -3,5 +3,5 @@ CREATE TABLE public.equation (
 	equation varchar(7) NOT NULL
 );
 
-INSERT INTO public.equation ("10*4+2");
+INSERT INTO equation (equation) VALUES ('10*4/2');
 
