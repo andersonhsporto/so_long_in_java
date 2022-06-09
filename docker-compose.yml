@@ -1,11 +1,54 @@
 version: "1.0"
 services:
-  web:
-    build: DailyClient/
+  db:
+    image: postgres
+    container_name: daily-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pleiades
     ports:
-      - "80:80"
+      - "5432:5432"
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    restart: always
+    # networks:
+    #   - db
+    #   - back-end
 
   back-end:
     build: DailyServer/
+    container_name: daily-server
     ports:
       - "4242:4242"
+    restart: always
+    depends_on:
+      - db
+    # networks:
+    #   - back-end
+    #   - db
+
+  web:
+    build: DailyClient/
+    container_name: daily-client
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - back-end
+    # networks:
+    #   - web
+    #   - back-end
+
+# networks:
+#   web:
+#     external: true
+#     name: web
+#   back-end:
+#     external: false
+#     name: back-end
+#   db:
+#     external: false
+#     name: db
+
+volumes:
+  postgres-db:
