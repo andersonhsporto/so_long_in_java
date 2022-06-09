@@ -1,11 +1,8 @@
 version: "1.0"
 services:
   db:
-    image: postgres
+    build: DailyDb
     container_name: daily-db
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=pleiades
     ports:
       - "5432:5432"
     volumes:
@@ -27,7 +24,7 @@ services:
     #   - back-end
     #   - db
 
-  web:
+  front-end:
     build: DailyClient/
     container_name: daily-client
     ports:
@@ -36,13 +33,13 @@ services:
     depends_on:
       - back-end
     # networks:
-    #   - web
+    #   - front-end
     #   - back-end
 
 # networks:
-#   web:
+#   front-end:
 #     external: true
-#     name: web
+#     name: front-end
 #   back-end:
 #     external: false
 #     name: back-end
