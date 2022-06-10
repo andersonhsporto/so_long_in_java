@@ -24,6 +24,7 @@ public class SpringFoxConfig {
                 .build()
                 .apiInfo(metaInfo());
     }
+
     private ApiInfo metaInfo() {
         ApiInfo apiInfo = new ApiInfo(
                 "API RESTFUL",
