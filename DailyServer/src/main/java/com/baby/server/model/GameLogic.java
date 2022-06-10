@@ -1,10 +1,6 @@
 package com.baby.server.model;
 
-import com.baby.server.repository.EquationRepository;
-import com.baby.server.service.DailyEquations;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.beans.factory.annotation.Autowired;
-import java.time.DayOfWeek;
 
 public class GameLogic {
     @JsonIgnore
@@ -14,8 +10,8 @@ public class GameLogic {
     private String input;
     private String tips;
 
-    public GameLogic(String equation) {
-        secretEquation = "";
+    public GameLogic(String equation, String dailyEquation) {
+        secretEquation = dailyEquation;
         input = equation;
         isFortyTwo = false;
         isValidInput = false;

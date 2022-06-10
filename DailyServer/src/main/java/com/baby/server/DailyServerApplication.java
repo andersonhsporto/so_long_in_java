@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BabyServerApplication {
+public class DailyServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BabyServerApplication.class, args);
+        SpringApplication.run(DailyServerApplication.class, args);
     }
 }

@@ -1,15 +1,11 @@
 package com.baby.server.service;
 
 import com.baby.server.model.GameLogic;
-import com.baby.server.model.SecretEquations;
-import com.baby.server.repository.EquationRepository;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.LocalDate;
 import java.util.regex.Pattern;
 
-public class BabyService {
+public class DailyService {
     public boolean isSixChars(String input) {
         return (input.length() == 6);
     }
@@ -37,19 +33,8 @@ public class BabyService {
         return tips;
     }
 
-    @Autowired
-    private EquationRepository repository;
-
-    public String getDailyEquation() {
-        int dayOfMonth = LocalDate.now().getDayOfMonth();
-
-        SecretEquations dbEquation = this.repository.findSecretEquationsById(dayOfMonth);
-        return dbEquation.getEquation();
-    }
-
-    public GameLogic validateAll(String input) {
-        GameLogic gameLogic = new GameLogic(input);
-        gameLogic.setSecretEquation(getDailyEquation()); // <<<< aqui!
+    public GameLogic validateAll(String input, String equation) {
+        GameLogic gameLogic = new GameLogic(input, equation);// <<<< aqui!
         if (isSixChars(input) && isOperationValid(input)) {
             gameLogic.setIsValidInput(true);
             if (isFortyTwo(gameLogic.getInput())) {
