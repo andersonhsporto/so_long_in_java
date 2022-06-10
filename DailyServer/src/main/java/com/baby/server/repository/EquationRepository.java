@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface EquationRepository extends JpaRepository<SecretEquations, Integer> {
-
+   SecretEquations findSecretEquationsById(int id);
 }

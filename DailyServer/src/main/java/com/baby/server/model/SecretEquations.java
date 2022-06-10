@@ -1,17 +1,15 @@
 package com.baby.server.model;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "equations")
+@Table(name = "equation")
 public class SecretEquations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "cafe")
+//    @Column(name = "cafe")
     private String equation;
 
     public int getId() {
