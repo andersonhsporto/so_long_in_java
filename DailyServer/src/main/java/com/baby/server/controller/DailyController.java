@@ -28,7 +28,7 @@ public class DailyController {
     @CrossOrigin
     @GetMapping(value = "/")
     @ApiOperation(value = "returns information's about the game validation")
-    public GameLogic getEquation(@RequestParam String equation) {
+    public GameLogic requestHandler(@RequestParam String equation) {
         return new DailyService().validateAll(equation, getDailyEquation());
     }
 }
