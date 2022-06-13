@@ -5,7 +5,7 @@ WORKDIR /home/app
 RUN ["apt-get", "update", "-y"]
 RUN ["apt-get", "install", "openjdk-17-jdk", "curl", "-y"]
 
-ENV url="https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz"
+ENV url="https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz"
 ENV install_dir="/opt/maven"
 
 COPY . .
